@@ -1,0 +1,39 @@
+<style>
+    * {
+         /*border: 1px solid red;*/
+     }
+ </style>
+
+<div class="container">
+    <div class="title">
+        <h4>Listado de Usuarios</h4>
+        <button type="button" class="btn btn-primary" routerLink="/add" >NuevoUsuario</button>
+    </div>
+   
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Edicion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of listUsers " class="table-primary">
+                <th>{{ item.name_usr }}</th>
+                <td>{{ item.lastname_usr }}</td>
+                <td>{{ item.mail_usr }}</td>
+                <td>{{ item.street_usr }}</td>
+                <td>{{ item.tef_usr }}</td>
+                <td>
+                    <button routerLink="/edit/{{item.id_user}}" type="button" class="btn btn-info btn-sm">Edit</button>
+                    <button routerLink="/delete/{{item.id_user}}" type="button" class="btn btn-primary btn-sm ms-2">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

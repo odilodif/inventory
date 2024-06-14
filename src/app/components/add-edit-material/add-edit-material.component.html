@@ -1,0 +1,90 @@
+<div class="row mt-1">
+  <div class="col-lg-8 offset-lg-2">
+    <div class="card text-white bg-secondary mb-3" style="max-width: 210rem;">
+
+
+      <div class="card text-white bg-primary mb-3" style="max-width: 80rem;">
+        <div class="card-header">Crear Nuevo Material</div>
+       
+        <form [formGroup]="formproduct" (ngSubmit)="addProduct()" >
+          <fieldset>
+            <legend>Nuevo.Material</legend>          
+            <div>
+              <label for="inputValid" class="form-label mt-4">Codigo:</label>
+              <input formControlName="codigo_mtrl" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Codigo">
+              <span *ngIf="formproduct.get('codigo_mtrl')?.hasError('required')" >El codigo del Nuevo Material o Producto  es requerido, maximo 6 caracteres</span>
+            </div>
+            <div>
+              <label  for="inputValid" class="form-label mt-4">Descripcion:</label>
+              <input formControlName="description_mtrl" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Descripcion">
+              <span  *ngIf="formproduct.get('description_mtrl')?.hasError('required')" class="">Descripcion del Nuevo Material o Producto es Requerido</span>
+            </div>
+            
+            <div>
+              <label  for="inputValid" class="form-label mt-4">Unidad.Medida:</label>
+              <input formControlName="unidad_med_mtrl" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Unidad.Medida">
+              <span *ngIf="formproduct.get('unidad_med_mtrl')?.hasError('required')" id="emailHelp" class="">Unidad.Medida del Nuevo Material o Productoes Requerido</span>
+            </div>
+            
+            <div>
+              <label  for="inputValid" class="form-label mt-4">Potencia/Capacidad:</label>
+              <input formControlName="potency" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Potencia/Capacidad">
+              <span *ngIf="formproduct.get('potency')?.hasError('required')" id="emailHelp" class="">Potencia/Capacidad del Nuevo Material o Producto es Requerido</span>
+            </div>
+
+            <div>              
+              <label for="exampleSelect1" class="form-label mt-4">Categoria</label>
+            
+              <select formControlName="id_cat" class="form-select"  name="category" id="id_category">
+                <option value="1">Maquinaria y Equipos</option>
+                <option value="2">Encofrados</option>
+                <option value="3">Repuestos y Materiales</option>
+                <option value="4">Varios</option>
+              </select>
+
+
+            </div>
+
+            <div>
+              <label  for="inputValid" class="form-label mt-4">Valor.Unitario:</label>
+              <input formControlName="value_item_mtrl" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Valor.Unitario">
+              <span *ngIf="formproduct.get('value_item_mtrl')?.hasError('required')" class="">Valor.Unitario del Nuevo Material o Producto es Requerido</span>
+            </div>
+          
+            
+            <div>
+              <label for="exampleTextarea" class="form-label mt-4">Observaciones del Producto o Material</label>
+              <textarea formControlName="obs_mtrl" class="form-control" id="exampleTextarea" rows="3"></textarea>
+            </div>
+            <!--div>
+              <label for="formFile" class="form-label mt-4">Cargar Imagen de Producto JPG</label>
+              <input class="form-control" type="file" id="formFile">
+            </div-->
+            
+            <fieldset>
+              <legend class="mt-4">Activo/Inactivo</legend>
+            
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked="">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Activado Predeterminado</label>
+              </div>
+            </fieldset>
+           
+          
+          </fieldset>
+          <div class="row mt-2 text-center">
+            <div class="col-lg-6">
+                <button type="submit" class="btn btn-warning" >Guardar</button>
+            </div>
+            <div class="col-lg-6">
+                <button routerLink="/" type="button" class="btn btn-secondary">Cancelar</button>
+            </div>
+
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+</div>

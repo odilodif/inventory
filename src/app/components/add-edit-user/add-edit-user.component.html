@@ -1,0 +1,44 @@
+<div class="row mt-1">
+    <div class="col-lg-4 offset-lg-4">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 30rem;">
+            <div class="card-header text-center">Agregar Usuario</div>
+            <div class="card-body">
+                <form [formGroup]="formUser" (ngSubmit)="addUser()" action="">
+                    <input formControlName="name_usr" type="text" class="form-control mt-2" placeholder="Nombres">
+                    <span *ngIf="formUser.get('name_usr')?.getError('required')">
+                        El campo es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="lastname_usr" type="text" class="form-control mt-2" placeholder="Apellidos">
+                    <span *ngIf="formUser.get('lastname_usr')?.getError('required')">
+                        El campo es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="usr" type="text" class="form-control mt-2" placeholder="Usuario">
+                    <span *ngIf="formUser.get('usr')?.getError('required')">
+                        El campo es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="password" type="password" class="form-control mt-2" placeholder="Contraseña">
+                    <span *ngIf="formUser.get('password')?.getError('required')">
+                        El campo es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="street" type="text" class="form-control mt-2" placeholder="Direccion">
+                    <span *ngIf="formUser.get('tef_usr')?.getError('required')">
+                        El campo es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="tef_usr" type="text" class="form-control mt-2" placeholder="Telefono">
+                    <span *ngIf="formUser.get('tef_usr')?.getError('required')">
+                        El campo es <strong>requerido</strong>
+                    </span>
+                    <div class="row mt-2 text-center">
+                        <div class="col-lg-6">
+                            <button [disabled]="formUser.invalid"   type="submit" class="btn btn-primary" >Guardar</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button routerLink="/" type="button" class="btn btn-secondary">Cancelar</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<app-progress-bar *ngIf="loading" ></app-progress-bar>
+
+<div *ngIf="!loading" class="container">
+    <div class="title">
+        <h4>Listado de Materiales</h4>
+        <button type="button" class="btn btn-primary" routerLink="/addmaterial">NuevoItem</button>
+    </div>
+
+
+
+    <table *ngIf="listMaterials.length > 0" class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Codigo</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">UnidadMed</th>
+                <th scope="col">ValorUnit</th>
+                <th scope="col">Potencia</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Saldo</th>
+                <th scope="col">EditView</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let mat of listMaterials">
+
+            <tr class="table-primary">
+                <th> {{mat.id}}</th>
+                <td>{{mat.codigo_mtrl}}</td>
+                <td>{{mat.description_mtrl}}</td>
+                <td>{{mat.unidad_med_mtrl}}</td>
+                <td>{{mat.value_item_mtrl | currency }}</td>
+                <td>{{mat.potency}}</td>
+                <td>{{mat.id_cat}}</td>
+                <td>{{mat.saldo}}</td>
+                <td>
+                    <button routerLink="/editmaterial/{{mat.id}}" type="button"
+                        class="btn btn-primary btn-sm">Editar</button>
+                    <button (click)="deleteProducto(mat.id!)" type="button" class="btn btn-secondary btn-sm ms-2">Eliminar</button>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+<h5 *ngIf="listMaterials.length == 0" >No hay productos</h5>
+</div>

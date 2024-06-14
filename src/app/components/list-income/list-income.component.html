@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div class="title">
+        <h4>Listado de Ingresos
+
+        </h4>
+        <button type="button" class="btn btn-primary" routerLink="/addincome">Nuevo.Ingreso</button>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Codigo</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Proveedor</th>
+            <th scope="col">Creado.Por</th>
+            <th scope="col">Edicion</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr *ngFor="let income of listIncome" class="table-primary">
+            <th>{{'ING-00'+income.id}}</th>
+            <td>{{income.date_inc | date: 'dd/MM/yyyy hh:mm a'}}</td>
+            <td>{{income.provider}}</td>
+            <td>{{income.create_uid}}</td>
+            <td>
+                <button routerLink="/editincome/{{income.id}}" type="button" class="btn btn-primary btn-sm">Editar</button>
+                <button type="button" class="btn btn-secondary btn-sm ms-2">Eliminar</button>
+
+
+            </td>
+          </tr>
+         
+        </tbody>
+      </table>
+
+</div>

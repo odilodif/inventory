@@ -1,0 +1,32 @@
+table, td, th {    
+    border: 1px solid #7F7F7F;
+    /*text-align: left;*/
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/*th, td {
+    padding: 15px;
+}*/
+
+#navIngresosEgresos{
+    /*        max-height: 600px;
+            overflow-y:scroll; */
+}
+
+
+#tbodyIngDetalle{
+
+}
+
+#tblDetalleIng  tbody { display: block; }
+#tblDetalleIng  thead { display: block; }
+
+#tblDetalleIng tbody {
+    height: 250px;       /* Just for the demo          */
+    overflow-y: auto;    /* Trigger vertical scroll    */
+   overflow-x: hidden;  
+}

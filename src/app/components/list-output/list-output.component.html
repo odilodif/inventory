@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div class="title">
+        <h4>Listado de Egresos
+
+        </h4>
+        <button type="button" class="btn btn-primary" routerLink="/addexpence">Nuevo.Egreso</button>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Codigo</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Entregado.Por</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr class="table-primary" *ngFor="let expence of listExpence">
+            <th scope="row">{{expence.id}}</th>
+            <td>{{expence.id}}</td>
+            <td>{{expence.date_exp | date: 'dd/MM/yyyy hh:mm a' }}</td>
+            <td>{{expence.id_cli}}</td>
+            <td>{{expence.id_user}}</td>
+            <td>
+              <button routerLink="/editexpence/{{expence.id}}" type="button" class="btn btn-primary btn-sm">Editar</button>
+              <button type="button" class="btn btn-secondary btn-sm ms-2">Eliminar</button>
+
+
+          </td>
+          </tr>
+         
+        </tbody>
+      </table>
+
+</div>

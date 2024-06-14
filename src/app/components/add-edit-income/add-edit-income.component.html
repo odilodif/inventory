@@ -1,0 +1,150 @@
+<div class="row mt-1">
+    <div class="col-lg-4 offset-lg-3">
+        
+          <div class="card-header">Ingresos</div>
+          <form action="">
+            <fieldset>
+              <legend style="color:#8A6B39;">Ingreso-Tarjeta</legend>
+              <div class="col-md-12">
+                  <div class="row">
+                      <div class="col-md-8">
+                          <table border=1 style="width: 650px;">
+                              <tr>
+                                  <td bgcolor="#FDC8A0" style="font-size: 9px;" >INGRESO #</td>
+                                  <td bgcolor="#EEEEEE" style="width: 125px; font-size: 9px;" align="center" valign="middle"><label>Fecha</label></td>
+                                  <td colspan="2" bgcolor="#EEEEEE" style="width: 300px; font-size: 9px;" align="center" valign="middle">Proveedor</td>
+                                  <td bgcolor="#EEEEEE" align="center" valign="middle" style="font-size: 9px;">Ingr.Por</td>       
+          
+                              </tr>
+                              <tr>
+                                  <td><label style="font-size: 13px; color: red;">1392</label></td>
+                                  <td style="width: 125px;"> <label style="font-size: 10px; color: #0432FF; ">Miercoles 05-02-2016</label> </td>
+                                  <td><label style="font-size: 11px; color: #0432FF;">154</label></td>
+                                  <td style="width: 300px; font-size: 12px;">Angos Jose</td>
+                                  <td><label style="font-size: 11px; color: #0432FF;">ODILO</label></td>
+                              </tr>
+                          </table>           
+                      </div>  
+                  </div>
+          
+          
+                  <div class="row" style="padding-top: 5px;">
+                      <div class="col-md-8" id="divIngresoDetalle">
+                          <table id="tblDetalleIng" border="1" style="width: 650px;" >
+                              <thead >
+                              <td colspan="2" bgcolor="#EEEEEE" style="width: 80px; " align="center" valign="middle">Código</td>
+                              <td bgcolor="#EEEEEE" style="width: 426px; " align="center" valign="middle">Material</td>
+                              <td bgcolor="#EEEEEE" align="center" valign="middle">Unidad</td>
+                              <td bgcolor="#EEEEEE" align="center" valign="middle">Cant.</td>
+                              <td> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <i class="fa-solid fa-plus"></i>
+                              </button> </td>
+                              </thead> 
+                              <tfoot>
+                               
+                              </tfoot>
+                              <tbody id="tbodyIngDetalle">
+                                  <tr>
+                                      <!--
+                                        
+                                        
+                                        <button type="button" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i></button>
+                                        
+                                        
+                                        td style="width: 10px;" ><label style="font-size: 10px; color: #0432FF;">º</label></td>
+                                      <td ><input  type="text"  id="txtMat_Codigo" class="txtCodigoMaterial" style="font-size: 10px; color: #0432FF; width: 69px;" /></td>
+                                      <td><label id="lblDescripcion" style="font-size: 10px; width: 426px; "></label></td>
+                                      <td style="width: 44px;">U</td>
+                                      <td><input  type="text"  id="txtMat_Cant" style="font-size: 10px; color: #0432FF; width: 69px;" value=""/></td>
+                                      <td><input  type="text"  id="txtMat_OdC" style="font-size: 10px; color: #0432FF; width: 69px;" value=""/></td
+                                    
+
+
+                                        
+                                    
+                                    
+                                    -->
+          
+                                  </tr> 
+                              </tbody>
+                          </table> 
+                      </div>
+                  </div>
+              </div>
+          </fieldset>
+          
+          <div class="row mt-2 text-center">
+            <div class="col-lg-6">
+                <button   type="submit" class="btn btn-primary" >Guardar</button>
+            </div>
+            <div class="col-lg-6">
+                <button routerLink="/" type="button" class="btn btn-secondary">Cancelar</button>
+            </div>
+
+        </div>
+          </form>   
+    </div>
+  </div>
+
+
+
+
+
+<!--button (click)="disminuir()" >-</button>
+<span>{{numero}}</span>
+<button (click)="incrementar()" >+</button-->
+
+
+    <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Lista de Materiales</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         
+            <div class="container">
+              
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Codigo</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">UnidadMed</th>
+                                <th scope="col">Saldo</th>
+                                <th scope="col">ValorUnit</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody >
+            
+                            <tr class="table-primary">
+                                <th> </th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                               
+                            </tr>
+            
+                        </tbody>
+                    </table>
+            
+                </div>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
