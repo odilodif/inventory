@@ -4,11 +4,11 @@
 
 
       <div class="card text-white bg-primary mb-3" style="max-width: 80rem;">
-        <div class="card-header">Crear Nuevo Material</div>
+        <div class="card-header">{{operacion}} Material/Producto</div>
        
         <form [formGroup]="formproduct" (ngSubmit)="addProduct()" >
           <fieldset>
-            <legend>Nuevo.Material</legend>          
+            <legend>{{operacion}} Material/Producto</legend>          
             <div>
               <label for="inputValid" class="form-label mt-4">Codigo:</label>
               <input formControlName="codigo_mtrl" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Codigo">
@@ -74,10 +74,10 @@
           </fieldset>
           <div class="row mt-2 text-center">
             <div class="col-lg-6">
-                <button type="submit" class="btn btn-warning" >Guardar</button>
+                <button type="submit"  class="btn btn-warning" >Guardar</button>
             </div>
             <div class="col-lg-6">
-                <button routerLink="/" type="button" class="btn btn-secondary">Cancelar</button>
+                <button routerLink="/listmaterials" type="button" class="btn btn-secondary">Cancelar</button>
             </div>
 
         </div>

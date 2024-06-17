@@ -30,4 +30,12 @@ export class MaterialServiceService {
   saveProduct(product: Material): Observable<void> {
     return this.http.post<void>(`${this.myAppUrl}${this.myApiUrl}`, product);
   }
+
+  getProductoById(id: number): Observable<Material> {
+    return this.http.get<Material>(`${this.myAppUrl}${this.myApiUrl}${id}`)
+  }
+
+  updateProductoById(id: number, prod: Material): Observable<void> {
+    return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`,prod)
+  }
 }

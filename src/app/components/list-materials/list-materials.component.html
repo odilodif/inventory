@@ -17,8 +17,7 @@
                 <th scope="col">UnidadMed</th>
                 <th scope="col">ValorUnit</th>
                 <th scope="col">Potencia</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Saldo</th>
+                <th scope="col">Categoria</th>              
                 <th scope="col">EditView</th>
             </tr>
         </thead>
@@ -32,7 +31,7 @@
                 <td>{{mat.value_item_mtrl | currency }}</td>
                 <td>{{mat.potency}}</td>
                 <td>{{mat.id_cat}}</td>
-                <td>{{mat.saldo}}</td>
+                
                 <td>
                     <button routerLink="/editmaterial/{{mat.id}}" type="button"
                         class="btn btn-primary btn-sm">Editar</button>
